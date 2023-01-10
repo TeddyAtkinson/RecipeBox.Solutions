@@ -1,0 +1,37 @@
+{
+  "Version": 1,
+  "Hash": "s6kr9faBxfI7i85aWXcqlV9fDf9+EclAyugno3h5uT0=",
+  "Source": "RecipeBox",
+  "BasePath": "_content/RecipeBox",
+  "Mode": "Default",
+  "ManifestType": "Build",
+  "ReferencedProjectsConfiguration": [],
+  "DiscoveryPatterns": [
+    {
+      "Name": "RecipeBox\\wwwroot",
+      "Source": "RecipeBox",
+      "ContentRoot": "C:\\Users\\Ted's Desktop\\Documents\\EpicodusPractice\\RecipeBox.Solutions\\RecipeBox\\wwwroot\\",
+      "BasePath": "_content/RecipeBox",
+      "Pattern": "**"
+    }
+  ],
+  "Assets": [
+    {
+      "Identity": "C:\\Users\\Ted's Desktop\\Documents\\EpicodusPractice\\RecipeBox.Solutions\\RecipeBox\\wwwroot\\css\\styles.css",
+      "SourceId": "RecipeBox",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\Users\\Ted's Desktop\\Documents\\EpicodusPractice\\RecipeBox.Solutions\\RecipeBox\\wwwroot\\",
+      "BasePath": "_content/RecipeBox",
+      "RelativePath": "css/styles.css",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\css\\styles.css"
+    }
+  ]
+}
