@@ -8,41 +8,50 @@
 
 <hr>
 
-<h4>Recipes</h4>
-@if (Model["recipes"].Length == 0)
-{
-  <p>No recipes have been added yet!</p>
-} 
-<ul>
-  @foreach (Recipe recipe in Model["recipes"])
-  {
-    <li>@Html.ActionLink(@recipe.Name, "Details", "Recipes", new { id = @recipe.RecipeId})</li>
-  }
-</ul>
-
+<div class="jumbotron">
 @if (User.Identity.IsAuthenticated)
 {
-  <h4>Tags for @User.Identity.Name</h4>
-  @if (Model["tags"].Length == 0)
-  {
-    <p>No tags have been added yet!</p>
-  } 
-  <ul>
-    @foreach (Tag tag in Model["tags"])
+  <div class="card mb-4 p-2">
+    <h4>Recipes</h4>
+    @if (Model["recipes"].Length == 0)
     {
-      <li>@Html.ActionLink(@tag.Title, "Details", "Items", new { id = @tag.TagId})</li>
-    }
-  </ul>
+      <p>No recipes have been added yet!</p>
+    } 
+    <ul>
+      @foreach (Recipe recipe in Model["recipes"])
+      {
+        <li>@Html.ActionLink(@recipe.Name, "Details", "Recipes", new { id = @recipe.RecipeId}) | @Html.DisplayNameFor(model => @recipe.Rating): @Html.DisplayFor(model => @recipe.Rating)</li>
+      }
+    </ul>
+  </div>
+  <div class="card p-2">
+    <h4>Tags for @User.Identity.Name</h4>
+    @if (Model["tags"].Length == 0)
+    {
+      <p>No tags have been added yet!</p>
+    } 
+    <ul>
+      @foreach (Tag tag in Model["tags"])
+      {
+        <li>@Html.ActionLink(@tag.Title, "Details", "Tags", new { id = @tag.TagId})</li>
+      }
+    </ul>
+  </div>
+
+  @using (Html.BeginForm("Search", "Home", FormMethod.Get))
+  {
+    @Html.TextBox("query", "", new { @class = "form-control" })
+    <input type="submit" value="Search">
+  }
 }
 else
 {
-  <h4>Tags</h4>
-  <p>Please @Html.ActionLink("log in", "LogIn", "Account") to view or manage your tags.</p>
+  <p>Please @Html.ActionLink("log in", "LogIn", "Account") to view or manage your recipes and tags.</p>
 }
 
+</div>
 <hr>
 
 <p>@Html.ActionLink("Manage items", "Index", "Items")</p> 
-<p>@Html.ActionLink("Manage categories", "Index", "Categories")</p>
 <p>@Html.ActionLink("Manage tags", "Index", "Tags")</p>
 <p>@Html.ActionLink("Create or manage an account", "Index", "Account")</p>

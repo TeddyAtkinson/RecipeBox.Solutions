@@ -11,6 +11,7 @@ using System.Security.Claims;
 
 namespace RecipeBox.Controllers
 {
+  [Authorize]
   public class TagsController : Controller
   {
     private readonly RecipeBoxContext _db;

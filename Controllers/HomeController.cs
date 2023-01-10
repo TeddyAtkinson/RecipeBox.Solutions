@@ -38,5 +38,11 @@ namespace RecipeBox.Controllers
         }
         return View(model);
       }
+
+      public ActionResult Search(string query)
+      {
+        List<Recipe> recipeResults = _db.Recipes.Where(recipe => recipe.Ingredients.Contains(query)).ToList();
+        return View(recipeResults);
+      }
     }
 }
